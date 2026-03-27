@@ -3,8 +3,8 @@
 export function NewReleasePromo() {
   return (
     <section className="mt-20 w-full px-4">
-      <div className="mx-auto max-w-5xl rounded-auto border border-white/10 bg-black/20 p-2 shadow-[0_20px_60px_rgba(0,0,0,0.35)]">
-        <div className="relative mx-auto min-h-auto overflow-hidden rounded-[38px] border border-white/10 px-6 py-14 shadow-sm md:px-10 md:py-16">
+      <div className="mx-auto max-w-5xl rounded-[40px] border border-white/10 bg-black/20 p-2 shadow-[0_20px_60px_rgba(0,0,0,0.35)]">
+        <div className="relative mx-auto min-h-[460px] overflow-hidden rounded-[38px] border border-white/10 px-6 py-14 shadow-sm md:px-10 md:py-16">
           {/* fundo principal com gradiente */}
           <div className="absolute inset-0 bg-[linear-gradient(135deg,#f0b400_0%,#f5c400_25%,#d89f00_55%,#a87400_100%)]" />
 
