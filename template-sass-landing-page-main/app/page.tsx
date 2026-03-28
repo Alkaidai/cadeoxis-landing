@@ -29,28 +29,33 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  const scrollToSection = (elementId: string) => {
+    const element = document.getElementById(elementId)
+    if (!element) return
+
+    const headerOffset = 120
+    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
+    const offsetPosition = elementPosition - headerOffset
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    })
+  }
+
   const handleMobileNavClick = (elementId: string) => {
     setIsMobileMenuOpen(false)
 
     setTimeout(() => {
-      const element = document.getElementById(elementId)
-      if (element) {
-        const headerOffset = 120
-        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
-        const offsetPosition = elementPosition - headerOffset
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth",
-        })
-      }
+      scrollToSection(elementId)
     }, 100)
   }
 
   return (
     <div className="relative min-h-screen w-full bg-black">
+      {/* fundo global sem bloquear clique */}
       <div
-        className="absolute inset-0 z-0"
+        className="pointer-events-none absolute inset-0 z-0"
         style={{
           background:
             "radial-gradient(ellipse 50% 35% at 50% 0%, rgba(226, 232, 240, 0.12), transparent 60%), #000000",
@@ -77,84 +82,44 @@ export default function Home() {
         </a>
 
         <div className="absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium text-muted-foreground transition duration-200 hover:text-foreground md:flex md:space-x-2">
-          <a
+          <button
+            type="button"
             className="relative cursor-pointer px-4 py-2 text-muted-foreground transition-colors hover:text-foreground"
-            onClick={(e) => {
-              e.preventDefault()
-              const element = document.getElementById("features")
-              if (element) {
-                const headerOffset = 120
-                const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
-                const offsetPosition = elementPosition - headerOffset
-                window.scrollTo({ top: offsetPosition, behavior: "smooth" })
-              }
-            }}
+            onClick={() => scrollToSection("features")}
           >
             <span className="relative z-20">Como funciona</span>
-          </a>
+          </button>
 
-          <a
+          <button
+            type="button"
             className="relative cursor-pointer px-4 py-2 text-muted-foreground transition-colors hover:text-foreground"
-            onClick={(e) => {
-              e.preventDefault()
-              const element = document.getElementById("pricing")
-              if (element) {
-                const headerOffset = 120
-                const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
-                const offsetPosition = elementPosition - headerOffset
-                window.scrollTo({ top: offsetPosition, behavior: "smooth" })
-              }
-            }}
+            onClick={() => scrollToSection("pricing")}
           >
             <span className="relative z-20">Preço</span>
-          </a>
+          </button>
 
-          <a
+          <button
+            type="button"
             className="relative cursor-pointer px-4 py-2 text-muted-foreground transition-colors hover:text-foreground"
-            onClick={(e) => {
-              e.preventDefault()
-              const element = document.getElementById("testimonials")
-              if (element) {
-                const headerOffset = 120
-                const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
-                const offsetPosition = elementPosition - headerOffset
-                window.scrollTo({ top: offsetPosition, behavior: "smooth" })
-              }
-            }}
+            onClick={() => scrollToSection("testimonials")}
           >
             <span className="relative z-20">Etapas</span>
-          </a>
+          </button>
 
-          <a
-            className="relative cursor-pointer px-4 py-2 text-muted-foreground transition-colors hover:text-foreground"
-            onClick={(e) => {
-              e.preventDefault()
-              const element = document.getElementById("faq")
-              if (element) {
-                const headerOffset = 120
-                const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
-                const offsetPosition = elementPosition - headerOffset
-                window.scrollTo({ top: offsetPosition, behavior: "smooth" })
-              }
-            }}
+          <button
+            type="button"
+            className="relative z-[10000] cursor-pointer px-4 py-2 text-muted-foreground transition-colors hover:text-foreground"
+            onClick={() => scrollToSection("faq")}
           >
             <span className="relative z-20">Dúvidas</span>
-          </a>
+          </button>
         </div>
 
         <div className="flex items-center gap-4">
           <a
-            href="#pricing"
-            onClick={(e) => {
-              e.preventDefault()
-              const element = document.getElementById("pricing")
-              if (element) {
-                const headerOffset = 120
-                const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
-                const offsetPosition = elementPosition - headerOffset
-                window.scrollTo({ top: offsetPosition, behavior: "smooth" })
-              }
-            }}
+            href="https://pay.kiwify.com.br/2da9bZ8"
+            target="_blank"
+            rel="noopener noreferrer"
             className="cursor-pointer rounded-md bg-gradient-to-b from-primary to-primary/80 px-4 py-2 text-center text-sm font-bold text-primary-foreground shadow-[0px_2px_0px_0px_rgba(255,255,255,0.3)_inset] transition duration-200 hover:-translate-y-0.5"
           >
             Quero começar
@@ -179,11 +144,24 @@ export default function Home() {
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           className="flex h-10 w-10 items-center justify-center rounded-full border border-border/50 bg-background/50 transition-colors hover:bg-background/80"
           aria-label="Toggle menu"
+          type="button"
         >
           <div className="flex h-5 w-5 flex-col items-center justify-center space-y-1">
-            <span className={`block h-0.5 w-4 bg-foreground transition-all duration-300 ${isMobileMenuOpen ? "translate-y-1.5 rotate-45" : ""}`} />
-            <span className={`block h-0.5 w-4 bg-foreground transition-all duration-300 ${isMobileMenuOpen ? "opacity-0" : ""}`} />
-            <span className={`block h-0.5 w-4 bg-foreground transition-all duration-300 ${isMobileMenuOpen ? "-translate-y-1.5 -rotate-45" : ""}`} />
+            <span
+              className={`block h-0.5 w-4 bg-foreground transition-all duration-300 ${
+                isMobileMenuOpen ? "translate-y-1.5 rotate-45" : ""
+              }`}
+            />
+            <span
+              className={`block h-0.5 w-4 bg-foreground transition-all duration-300 ${
+                isMobileMenuOpen ? "opacity-0" : ""
+              }`}
+            />
+            <span
+              className={`block h-0.5 w-4 bg-foreground transition-all duration-300 ${
+                isMobileMenuOpen ? "-translate-y-1.5 -rotate-45" : ""
+              }`}
+            />
           </div>
         </button>
       </header>
@@ -195,6 +173,7 @@ export default function Home() {
               <button
                 onClick={() => handleMobileNavClick("features")}
                 className="rounded-lg px-4 py-3 text-left text-lg font-medium text-muted-foreground transition-colors hover:bg-background/50 hover:text-foreground"
+                type="button"
               >
                 Como funciona
               </button>
@@ -202,6 +181,7 @@ export default function Home() {
               <button
                 onClick={() => handleMobileNavClick("pricing")}
                 className="rounded-lg px-4 py-3 text-left text-lg font-medium text-muted-foreground transition-colors hover:bg-background/50 hover:text-foreground"
+                type="button"
               >
                 Preço
               </button>
@@ -209,6 +189,7 @@ export default function Home() {
               <button
                 onClick={() => handleMobileNavClick("testimonials")}
                 className="rounded-lg px-4 py-3 text-left text-lg font-medium text-muted-foreground transition-colors hover:bg-background/50 hover:text-foreground"
+                type="button"
               >
                 Etapas
               </button>
@@ -216,17 +197,16 @@ export default function Home() {
               <button
                 onClick={() => handleMobileNavClick("faq")}
                 className="rounded-lg px-4 py-3 text-left text-lg font-medium text-muted-foreground transition-colors hover:bg-background/50 hover:text-foreground"
+                type="button"
               >
                 Dúvidas
               </button>
 
               <div className="mt-4 flex flex-col space-y-3 border-t border-border/50 pt-4">
                 <a
-                  href="#pricing"
-                  onClick={(e) => {
-                    e.preventDefault()
-                    handleMobileNavClick("pricing")
-                  }}
+                  href="https://pay.kiwify.com.br/2da9bZ8"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="rounded-lg bg-gradient-to-b from-primary to-primary/80 px-4 py-3 text-center text-lg font-bold text-primary-foreground shadow-lg transition-all duration-200 hover:-translate-y-0.5"
                 >
                   Quero começar
