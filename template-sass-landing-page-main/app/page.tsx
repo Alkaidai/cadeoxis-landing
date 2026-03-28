@@ -126,16 +126,6 @@ export default function Home() {
           </a>
         </div>
 
-        <div className="flex items-center gap-4">
-          <a
-            href="https://pay.kiwify.com.br/2da9bZ8"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="cursor-pointer rounded-md bg-gradient-to-b from-primary to-primary/80 px-4 py-2 text-center text-sm font-bold text-primary-foreground shadow-[0px_2px_0px_0px_rgba(255,255,255,0.3)_inset] transition duration-200 hover:-translate-y-0.5"
-          >
-            Quero começar
-          </a>
-        </div>
       </header>
 
       {/* Mobile Header */}
