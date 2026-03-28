@@ -53,7 +53,6 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen w-full bg-black">
-      {/* fundo global sem bloquear clique */}
       <div
         className="pointer-events-none absolute inset-0 z-0"
         style={{
@@ -64,7 +63,7 @@ export default function Home() {
 
       {/* Desktop Header */}
       <header
-        className={`sticky top-4 z-[9999] mx-auto hidden w-full flex-row items-center justify-between self-start rounded-full border border-border/50 bg-background/80 py-2 shadow-lg backdrop-blur-sm transition-all duration-300 md:flex ${
+        className={`relative sticky top-4 z-[9999] mx-auto hidden w-full flex-row items-center justify-between self-start rounded-full border border-border/50 bg-background/80 py-2 shadow-lg backdrop-blur-sm transition-all duration-300 md:flex ${
           isScrolled ? "max-w-3xl px-2" : "max-w-5xl px-4"
         }`}
       >
@@ -81,38 +80,50 @@ export default function Home() {
           <span className="text-lg font-semibold text-white">Cadê o Xis</span>
         </a>
 
-        <div className="absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium text-muted-foreground transition duration-200 hover:text-foreground md:flex md:space-x-2">
-          <button
-            type="button"
-            className="relative cursor-pointer px-4 py-2 text-muted-foreground transition-colors hover:text-foreground"
-            onClick={() => scrollToSection("features")}
+        <div className="absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium text-muted-foreground md:flex md:space-x-2">
+          <a
+            href="#features"
+            className="relative z-[10001] cursor-pointer bg-transparent px-4 py-2 text-muted-foreground transition-colors hover:bg-transparent hover:text-foreground focus:bg-transparent focus:outline-none"
+            onClick={(e) => {
+              e.preventDefault()
+              scrollToSection("features")
+            }}
           >
             <span className="relative z-20">Como funciona</span>
-          </button>
+          </a>
 
-          <button
-            type="button"
-            className="relative cursor-pointer px-4 py-2 text-muted-foreground transition-colors hover:text-foreground"
-            onClick={() => scrollToSection("pricing")}
+          <a
+            href="#pricing"
+            className="relative z-[10001] cursor-pointer bg-transparent px-4 py-2 text-muted-foreground transition-colors hover:bg-transparent hover:text-foreground focus:bg-transparent focus:outline-none"
+            onClick={(e) => {
+              e.preventDefault()
+              scrollToSection("pricing")
+            }}
           >
             <span className="relative z-20">Preço</span>
-          </button>
+          </a>
 
-          <button
-            type="button"
-            className="relative cursor-pointer px-4 py-2 text-muted-foreground transition-colors hover:text-foreground"
-            onClick={() => scrollToSection("testimonials")}
+          <a
+            href="#testimonials"
+            className="relative z-[10001] cursor-pointer bg-transparent px-4 py-2 text-muted-foreground transition-colors hover:bg-transparent hover:text-foreground focus:bg-transparent focus:outline-none"
+            onClick={(e) => {
+              e.preventDefault()
+              scrollToSection("testimonials")
+            }}
           >
             <span className="relative z-20">Etapas</span>
-          </button>
+          </a>
 
-          <button
-            type="button"
-            className="relative z-[10000] cursor-pointer px-4 py-2 text-muted-foreground transition-colors hover:text-foreground"
-            onClick={() => scrollToSection("faq")}
+          <a
+            href="#faq"
+            className="relative z-[10001] cursor-pointer bg-transparent px-4 py-2 text-muted-foreground transition-colors hover:bg-transparent hover:text-foreground focus:bg-transparent focus:outline-none"
+            onClick={(e) => {
+              e.preventDefault()
+              scrollToSection("faq")
+            }}
           >
             <span className="relative z-20">Dúvidas</span>
-          </button>
+          </a>
         </div>
 
         <div className="flex items-center gap-4">
