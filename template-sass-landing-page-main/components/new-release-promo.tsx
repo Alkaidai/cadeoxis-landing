@@ -55,8 +55,8 @@ export function NewReleasePromo() {
 
               <div className="flex items-center justify-center">
                 <a href="#pricing">
-                  <div className="group flex h-[66px] cursor-pointer items-center gap-2 rounded-full border border-[#0f2c67]/40 bg-[#1a376f]/65 p-[11px] shadow-[0_10px_30px_rgba(0,0,0,0.18)] backdrop-blur-sm transition-all duration-300 hover:scale-[1.02]">
-                    <div className="flex h-[43px] items-center justify-center rounded-full border border-white/15 bg-white/12 px-5">
+                 <div className="group flex h-[66px] cursor-pointer items-center gap-2 rounded-full border border-[#014aad]/40 bg-gradient-to-r from-[#014aad] to-[#123b8f] p-[11px] shadow-[0_10px_30px_rgba(1,74,173,0.4)] transition-all duration-300 hover:scale-[1.02] hover:brightness-110">
+                    <div className="flex h-[43px] items-center justify-center rounded-full px-5">
                       <p className="flex items-center justify-center gap-2 font-medium tracking-tight text-white">
                         Quero começar agora
                       </p>

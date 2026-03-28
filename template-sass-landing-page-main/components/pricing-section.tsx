@@ -93,18 +93,20 @@ export function PricingSection() {
                 ))}
               </ul>
 
-              <motion.a
-                href="#"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className={`block w-full rounded-lg px-6 py-3 text-center font-medium transition-all duration-200 ${
-                  plan.popular
-                    ? "bg-gradient-to-r from-[#014aad] to-[#123b8f] text-white shadow-lg shadow-[#014aad]/30 hover:brightness-110"
-                    : "border border-white/20 bg-white/10 text-white hover:bg-white/20"
-                }`}
-              >
-                {plan.cta}
-              </motion.a>
+               <motion.a
+  href="https://pay.kiwify.com.br/2da9bZ8"
+  target="_blank"
+  rel="noopener noreferrer"
+  whileHover={{ scale: 1.02 }}
+  whileTap={{ scale: 0.98 }}
+  className={`block w-full rounded-lg px-6 py-3 text-center font-medium transition-all duration-200 ${
+    plan.popular
+      ? "bg-gradient-to-r from-[#014aad] to-[#123b8f] text-white shadow-lg shadow-[#014aad]/30 hover:brightness-110"
+      : "border border-white/20 bg-white/10 text-white hover:bg-white/20"
+  }`}
+>
+  {plan.cta}
+</motion.a>
             </motion.div>
           ))}
         </div>

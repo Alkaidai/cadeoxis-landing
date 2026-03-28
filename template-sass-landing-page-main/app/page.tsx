@@ -7,8 +7,8 @@ import { TestimonialsSection } from "@/components/testimonials"
 import { NewReleasePromo } from "@/components/new-release-promo"
 import { FAQSection } from "@/components/faq-section"
 import { PricingSection } from "@/components/pricing-section"
-
-
+import ProblemSection from "@/components/home/problem-section"
+import MethodSection from "@/components/home/method-section"
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -62,12 +62,6 @@ export default function Home() {
         className={`sticky top-4 z-[9999] mx-auto hidden w-full flex-row items-center justify-between self-start rounded-full border border-border/50 bg-background/80 py-2 shadow-lg backdrop-blur-sm transition-all duration-300 md:flex ${
           isScrolled ? "max-w-3xl px-2" : "max-w-5xl px-4"
         }`}
-        style={{
-          willChange: "transform",
-          transform: "translateZ(0)",
-          backfaceVisibility: "hidden",
-          perspective: "1000px",
-        }}
       >
         <a
           className={`z-50 flex items-center justify-center gap-2 transition-all duration-300 ${
@@ -92,11 +86,7 @@ export default function Home() {
                 const headerOffset = 120
                 const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
                 const offsetPosition = elementPosition - headerOffset
-
-                window.scrollTo({
-                  top: offsetPosition,
-                  behavior: "smooth",
-                })
+                window.scrollTo({ top: offsetPosition, behavior: "smooth" })
               }
             }}
           >
@@ -112,11 +102,7 @@ export default function Home() {
                 const headerOffset = 120
                 const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
                 const offsetPosition = elementPosition - headerOffset
-
-                window.scrollTo({
-                  top: offsetPosition,
-                  behavior: "smooth",
-                })
+                window.scrollTo({ top: offsetPosition, behavior: "smooth" })
               }
             }}
           >
@@ -132,11 +118,7 @@ export default function Home() {
                 const headerOffset = 120
                 const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
                 const offsetPosition = elementPosition - headerOffset
-
-                window.scrollTo({
-                  top: offsetPosition,
-                  behavior: "smooth",
-                })
+                window.scrollTo({ top: offsetPosition, behavior: "smooth" })
               }
             }}
           >
@@ -152,11 +134,7 @@ export default function Home() {
                 const headerOffset = 120
                 const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
                 const offsetPosition = elementPosition - headerOffset
-
-                window.scrollTo({
-                  top: offsetPosition,
-                  behavior: "smooth",
-                })
+                window.scrollTo({ top: offsetPosition, behavior: "smooth" })
               }
             }}
           >
@@ -174,11 +152,7 @@ export default function Home() {
                 const headerOffset = 120
                 const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
                 const offsetPosition = elementPosition - headerOffset
-
-                window.scrollTo({
-                  top: offsetPosition,
-                  behavior: "smooth",
-                })
+                window.scrollTo({ top: offsetPosition, behavior: "smooth" })
               }
             }}
             className="cursor-pointer rounded-md bg-gradient-to-b from-primary to-primary/80 px-4 py-2 text-center text-sm font-bold text-primary-foreground shadow-[0px_2px_0px_0px_rgba(255,255,255,0.3)_inset] transition duration-200 hover:-translate-y-0.5"
@@ -186,7 +160,6 @@ export default function Home() {
             Quero começar
           </a>
         </div>
-        
       </header>
 
       {/* Mobile Header */}
@@ -208,26 +181,13 @@ export default function Home() {
           aria-label="Toggle menu"
         >
           <div className="flex h-5 w-5 flex-col items-center justify-center space-y-1">
-            <span
-              className={`block h-0.5 w-4 bg-foreground transition-all duration-300 ${
-                isMobileMenuOpen ? "translate-y-1.5 rotate-45" : ""
-              }`}
-            />
-            <span
-              className={`block h-0.5 w-4 bg-foreground transition-all duration-300 ${
-                isMobileMenuOpen ? "opacity-0" : ""
-              }`}
-            />
-            <span
-              className={`block h-0.5 w-4 bg-foreground transition-all duration-300 ${
-                isMobileMenuOpen ? "-translate-y-1.5 -rotate-45" : ""
-              }`}
-            />
+            <span className={`block h-0.5 w-4 bg-foreground transition-all duration-300 ${isMobileMenuOpen ? "translate-y-1.5 rotate-45" : ""}`} />
+            <span className={`block h-0.5 w-4 bg-foreground transition-all duration-300 ${isMobileMenuOpen ? "opacity-0" : ""}`} />
+            <span className={`block h-0.5 w-4 bg-foreground transition-all duration-300 ${isMobileMenuOpen ? "-translate-y-1.5 -rotate-45" : ""}`} />
           </div>
         </button>
       </header>
 
-      {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
         <div className="fixed inset-0 z-[9998] bg-black/50 backdrop-blur-sm md:hidden">
           <div className="absolute left-4 right-4 top-20 rounded-2xl border border-border/50 bg-background/95 p-6 shadow-2xl backdrop-blur-md">
@@ -277,26 +237,37 @@ export default function Home() {
         </div>
       )}
 
-      <Hero />
+      <main className="relative z-10">
+        <section id="hero-section">
+          <Hero />
+        </section>
 
-      <div id="features">
-        <Features />
-      </div>
+        <section id="problem">
+          <ProblemSection />
+        </section>
 
-      <div id="pricing">
-        <PricingSection />
-      </div>
+        <section id="method">
+          <MethodSection />
+        </section>
 
-      <div id="testimonials">
-        <TestimonialsSection />
-      </div>
+        <section id="features">
+          <Features />
+        </section>
 
-      <NewReleasePromo />
+        <section id="pricing">
+          <PricingSection />
+        </section>
 
-      <div id="faq">
-        <FAQSection />
-      </div>  
+        <section id="testimonials">
+          <TestimonialsSection />
+        </section>
 
+        <NewReleasePromo />
+
+        <section id="faq">
+          <FAQSection />
+        </section>
+      </main>
     </div>
   )
 }

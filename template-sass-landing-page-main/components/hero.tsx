@@ -1,25 +1,29 @@
-"use client"
+/*"use client"
 
 import { motion } from "framer-motion"
 import { geist } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
 import { VideoHero } from "@/components/components/video-hero"
 
+/*
 export default function Hero() {
   return (
     <section
       id="hero-section"
       className="relative min-h-screen w-full overflow-hidden px-4 py-24 md:px-6 md:py-32"
     >
-      {/* brilhos de fundo */}
+      {/* brilhos de fundo */
+/*
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute top-0 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-[#014aad]/20 blur-3xl" />
         <div className="absolute top-1/3 right-0 h-64 w-64 rounded-full bg-[#f0b400]/10 blur-3xl" />
         <div className="absolute bottom-0 left-0 h-64 w-64 rounded-full bg-[#014aad]/10 blur-3xl" />
       </div>
-
+/*
       <div className="container relative z-10 mx-auto max-w-6xl">
-        {/* badge */}
+        {/* badge */
+
+/*
         <motion.div
           className="mb-10 flex items-center justify-center"
           initial={{ opacity: 0, y: 24 }}
@@ -31,7 +35,8 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* título */}
+        {/* título */
+/*
         <motion.div
           className="mx-auto max-w-4xl text-center"
           initial={{ opacity: 0, y: 26 }}
@@ -67,7 +72,9 @@ export default function Hero() {
           </p>
         </motion.div>
 
-        {/* botões */}
+        {/* botões */
+
+/*
         <motion.div
           className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
           initial={{ opacity: 0, y: 26 }}
@@ -89,7 +96,8 @@ export default function Hero() {
           </a>
         </motion.div>
 
-        {/* bloco visual */}
+        {/* bloco visual */
+/*
         <motion.div
           className="mx-auto mt-16 max-w-5xl"
           initial={{ opacity: 0, y: 34 }}
@@ -98,8 +106,9 @@ export default function Hero() {
         >
           <div className="overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-white/[0.02] p-4 shadow-[0_20px_80px_rgba(0,0,0,0.35)] backdrop-blur-sm md:p-6">
             <div className="grid gap-4 md:grid-cols-[1.2fr_0.8fr]">
-              {/* lado esquerdo */}
-              <div className="rounded-2xl border border-white/8 bg-black/20 p-5 md:p-6">
+              {/* lado esquerdo */
+/*
+<div className="rounded-2xl border border-white/8 bg-black/20 p-5 md:p-6">
                 <div className="mb-4 flex items-center justify-between">
                   <div>
                     <p className="text-sm text-white/45">Treino organizado</p>
@@ -132,7 +141,8 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* lado direito */}
+              {/* lado direito */
+/*
               <div className="rounded-2xl border border-white/8 bg-black/20 p-5 md:p-6">
                 <div className="mb-4">
                   <p className="text-sm text-white/45">Clareza do estudo</p>
@@ -190,4 +200,4 @@ export default function Hero() {
       </div>
     </section>
   )
-}
+}*/
