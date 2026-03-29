@@ -12,6 +12,7 @@ const pricingPlans = [
       "Treino por tema e dificuldade",
       "Respostas comentadas",
       "Aulas sendo adicionadas toda semana (Em desenvolvimento)",
+      "Questões sendo adicionadas toda semana",
       "Caderno de erros",
       "Diagnóstico da sua base matemática",
     ],
