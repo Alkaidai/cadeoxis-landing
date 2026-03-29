@@ -6,14 +6,14 @@ import { Check, Sparkles } from "lucide-react"
 const pricingPlans = [
   {
     name: "Treinador de Matemática",
-    price: "R$47/mês",
-    description: "Treino prático para parar de travar quando a questão muda",
+    price: "R$29,90/mês",
+    description: "Preço reduzido enquanto o sistema ainda está sendo construído",
     features: [
       "Treino por tema e dificuldade",
-      "Banco de questões organizado",
-      "Prática com direção",
-      "Desenvolvimento de raciocínio",
-      "Mais segurança na hora da prova",
+      "Respostas comentadas",
+      "Aulas sendo adicionadas toda semana (Em desenvolvimento)",
+      "Caderno de erros",
+      "Diagnóstico da sua base matemática",
     ],
     cta: "QUERO COMEÇAR AGORA",
     badge: "Acesso completo",
@@ -48,7 +48,7 @@ export function PricingSection() {
           </h2>
 
           <p className="mx-auto mb-8 max-w-2xl text-lg text-white/60">
-            Para alunos que entendem a matéria, mas travam quando a questão muda
+            Para alunos que entendem a matéria, mas travam quando fazem exercícios
           </p>
         </motion.div>
 
@@ -94,7 +94,7 @@ export function PricingSection() {
               </ul>
 
                <motion.a
-  href="https://pay.kiwify.com.br/2da9bZ8"
+  href="https://pay.kiwify.com.br/9jQcMeL"
   target="_blank"
   rel="noopener noreferrer"
   whileHover={{ scale: 1.02 }}
