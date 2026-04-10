@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { useEffect, useState } from "react"
 import { Badge } from "@/components/ui/badge"
 import { Sparkles } from "lucide-react"
+import TopicsSection from "@/components/home/TopicsSection";
 
 export default function Hero() {
   const [mounted, setMounted] = useState(false)

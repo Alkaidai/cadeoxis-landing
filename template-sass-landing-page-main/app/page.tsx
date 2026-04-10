@@ -9,6 +9,7 @@ import { FAQSection } from "@/components/faq-section"
 import { PricingSection } from "@/components/pricing-section"
 import ProblemSection from "@/components/home/problem-section"
 import MethodSection from "@/components/home/method-section"
+import TopicsSection from "@/components/home/TopicsSection";
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -240,6 +241,9 @@ export default function Home() {
 
         <section id="features">
           <Features />
+        </section>
+        <section>
+          <TopicsSection />
         </section>
 
         <section id="pricing">
